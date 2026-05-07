@@ -6,344 +6,77 @@
   <title>Ahmed Designer | Graphic Designer & Motion Artist</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0d0d0d; color: #fff; }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
-    }
-
-    /* ── NAVBAR ── */
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2rem;
-      border-bottom: 0.5px solid #2a2a2a;
-      background: #0d0d0d;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem; border-bottom: 0.5px solid #2a2a2a;
+      background: #0d0d0d; position: sticky; top: 0; z-index: 100;
     }
+    .logo { font-size: 20px; font-weight: 600; color: #a78bfa; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: #aaa; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #a78bfa; }
 
-    .logo {
-      font-size: 20px;
-      font-weight: 600;
-      color: #a78bfa;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      color: #aaa;
-      font-size: 14px;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: #a78bfa;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 6rem 2rem 5rem;
-      text-align: center;
-    }
-
+    .hero { padding: 6rem 2rem 5rem; text-align: center; }
     .hero-tag {
-      display: inline-block;
-      background: #1e1333;
-      color: #a78bfa;
-      font-size: 12px;
-      padding: 5px 16px;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
-      border: 0.5px solid #4c3a8a;
+      display: inline-block; background: #1e1333; color: #a78bfa;
+      font-size: 12px; padding: 5px 16px; border-radius: 20px;
+      margin-bottom: 1.5rem; border: 0.5px solid #4c3a8a;
     }
+    .purple-dot { width: 8px; height: 8px; background: #7c3aed; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    .hero h1 { font-size: 48px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+    .hero h1 span { color: #a78bfa; }
+    .hero p { color: #888; font-size: 16px; max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.8; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: #7c3aed; color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; cursor: pointer; }
+    .btn-primary:hover { background: #6d28d9; }
+    .btn-secondary { background: transparent; color: #a78bfa; border: 0.5px solid #4c3a8a; padding: 12px 28px; border-radius: 8px; font-size: 15px; cursor: pointer; }
+    .btn-secondary:hover { background: #1e1333; }
 
-    .purple-dot {
-      width: 8px;
-      height: 8px;
-      background: #7c3aed;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 6px;
-    }
+    .section { padding: 4rem 2rem; border-top: 0.5px solid #1a1a1a; max-width: 1100px; margin: 0 auto; }
+    .section-title { font-size: 28px; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
+    .section-sub { color: #666; font-size: 14px; margin-bottom: 2.5rem; }
 
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .service-card { background: #131313; border: 0.5px solid #222; border-radius: 12px; padding: 1.5rem; transition: border-color 0.2s; }
+    .service-card:hover { border-color: #4c3a8a; }
+    .service-icon { font-size: 28px; color: #a78bfa; margin-bottom: 12px; }
+    .service-card h3 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .service-card p { font-size: 14px; color: #666; line-height: 1.7; }
 
-    .hero h1 span {
-      color: #a78bfa;
-    }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .portfolio-card { background: #131313; border: 0.5px solid #222; border-radius: 12px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; cursor: pointer; }
+    .portfolio-card:hover { border-color: #4c3a8a; transform: translateY(-4px); }
+    .portfolio-thumb { height: 160px; overflow: hidden; }
+    .portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+    .portfolio-card:hover .portfolio-thumb img { transform: scale(1.05); }
+    .portfolio-info { padding: 12px 14px; }
+    .portfolio-info h4 { font-size: 15px; font-weight: 600; color: #ddd; margin-bottom: 4px; }
+    .portfolio-info span { font-size: 12px; color: #555; }
 
-    .hero p {
-      color: #888;
-      font-size: 16px;
-      max-width: 540px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.8;
-    }
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.92); z-index: 999; align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 12px; object-fit: contain; }
+    .lightbox-close { position: fixed; top: 20px; right: 30px; font-size: 32px; color: #fff; cursor: pointer; z-index: 1000; }
 
-    .hero-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .about-box { background: #131313; border: 0.5px solid #222; border-radius: 12px; padding: 2rem; display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap; }
+    .avatar { width: 70px; height: 70px; border-radius: 50%; background: #1e1333; border: 2px solid #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 700; color: #a78bfa; flex-shrink: 0; }
+    .about-text h3 { font-size: 20px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .about-text p { color: #888; font-size: 15px; line-height: 1.8; max-width: 520px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .skill-tag { background: #1e1333; color: #a78bfa; font-size: 12px; padding: 5px 14px; border-radius: 20px; border: 0.5px solid #3b2f6e; }
 
-    .btn-primary {
-      background: #7c3aed;
-      color: #fff;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .contact-card { background: #131313; border: 0.5px solid #222; border-radius: 12px; padding: 1.4rem; display: flex; align-items: center; gap: 14px; transition: border-color 0.2s; }
+    .contact-card:hover { border-color: #4c3a8a; }
+    .contact-card i { font-size: 24px; color: #a78bfa; }
+    .contact-card .label { font-size: 12px; color: #555; margin-bottom: 3px; }
+    .contact-card .value { font-size: 14px; color: #ccc; }
 
-    .btn-primary:hover {
-      background: #6d28d9;
-    }
+    footer { text-align: center; padding: 2rem; border-top: 0.5px solid #1a1a1a; color: #444; font-size: 13px; }
 
-    .btn-secondary {
-      background: transparent;
-      color: #a78bfa;
-      border: 0.5px solid #4c3a8a;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-secondary:hover {
-      background: #1e1333;
-    }
-
-    /* ── SECTIONS ── */
-    .section {
-      padding: 4rem 2rem;
-      border-top: 0.5px solid #1a1a1a;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-sub {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── SERVICES ── */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .service-card {
-      background: #131313;
-      border: 0.5px solid #222;
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: border-color 0.2s;
-    }
-
-    .service-card:hover {
-      border-color: #4c3a8a;
-    }
-
-    .service-icon {
-      font-size: 28px;
-      color: #a78bfa;
-      margin-bottom: 12px;
-    }
-
-    .service-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 8px;
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.7;
-    }
-
-    /* ── PORTFOLIO ── */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .portfolio-card {
-      background: #131313;
-      border: 0.5px solid #222;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: border-color 0.2s, transform 0.2s;
-    }
-
-    .portfolio-card:hover {
-      border-color: #4c3a8a;
-      transform: translateY(-4px);
-    }
-
-    .portfolio-thumb {
-      height: 130px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .portfolio-info {
-      padding: 12px 14px;
-    }
-
-    .portfolio-info h4 {
-      font-size: 15px;
-      font-weight: 600;
-      color: #ddd;
-      margin-bottom: 4px;
-    }
-
-    .portfolio-info span {
-      font-size: 12px;
-      color: #555;
-    }
-
-    /* ── ABOUT ── */
-    .about-box {
-      background: #131313;
-      border: 0.5px solid #222;
-      border-radius: 12px;
-      padding: 2rem;
-      display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-      flex-wrap: wrap;
-    }
-
-    .avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: #1e1333;
-      border: 2px solid #7c3aed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      font-weight: 700;
-      color: #a78bfa;
-      flex-shrink: 0;
-    }
-
-    .about-text h3 {
-      font-size: 20px;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .about-text p {
-      color: #888;
-      font-size: 15px;
-      line-height: 1.8;
-      max-width: 520px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .skill-tag {
-      background: #1e1333;
-      color: #a78bfa;
-      font-size: 12px;
-      padding: 5px 14px;
-      border-radius: 20px;
-      border: 0.5px solid #3b2f6e;
-    }
-
-    /* ── CONTACT ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-
-    .contact-card {
-      background: #131313;
-      border: 0.5px solid #222;
-      border-radius: 12px;
-      padding: 1.4rem;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      transition: border-color 0.2s;
-    }
-
-    .contact-card:hover {
-      border-color: #4c3a8a;
-    }
-
-    .contact-card i {
-      font-size: 24px;
-      color: #a78bfa;
-    }
-
-    .contact-card .label {
-      font-size: 12px;
-      color: #555;
-      margin-bottom: 3px;
-    }
-
-    .contact-card .value {
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 0.5px solid #1a1a1a;
-      color: #444;
-      font-size: 13px;
-    }
-
-    /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero h1 { font-size: 32px; }
       .nav-links { gap: 1rem; }
@@ -352,6 +85,12 @@
   </style>
 </head>
 <body>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">✕</span>
+    <img id="lightbox-img" src="" alt="Portfolio image" />
+  </div>
 
   <!-- NAVBAR -->
   <nav>
@@ -366,9 +105,7 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-tag">
-      <span class="purple-dot"></span> Available for freelance
-    </div>
+    <div class="hero-tag"><span class="purple-dot"></span> Available for freelance</div>
     <h1>Creative <span>Graphic Designer</span><br>& Motion Artist</h1>
     <p>I help businesses grow their brand with stunning visuals — logos, social media content, video editing & motion graphics.</p>
     <div class="hero-btns">
@@ -408,62 +145,64 @@
   <!-- PORTFOLIO -->
   <div class="section" id="portfolio">
     <div class="section-title">Portfolio</div>
-    <div class="section-sub">Selected works</div>
+    <div class="section-sub">Click any image to view it — selected works</div>
     <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <div class="portfolio-thumb" style="background:#0a1a12;">
-          <i class="ti ti-heart-rate-monitor" style="font-size:40px;color:#1d9e75;"></i>
-        </div>
-        <div class="portfolio-info">
-          <h4>Daryeel Hospital</h4>
-          <span>Logo Design</span>
-        </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.06.jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.06.jpeg" alt="Medical Healthcare" /></div>
+        <div class="portfolio-info"><h4>Medical Healthcare</h4><span>Social Media Design</span></div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb" style="background:#1a0a14;">
-          <i class="ti ti-shopping-bag" style="font-size:40px;color:#d4537e;"></i>
-        </div>
-        <div class="portfolio-info">
-          <h4>Nada Boutique</h4>
-          <span>Brand Identity</span>
-        </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.06 (1).jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.06 (1).jpeg" alt="Fast Food" /></div>
+        <div class="portfolio-info"><h4>S Fast Food</h4><span>Social Media Design</span></div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb" style="background:#0a0f1a;">
-          <i class="ti ti-coffee" style="font-size:40px;color:#378add;"></i>
-        </div>
-        <div class="portfolio-info">
-          <h4>Taleex Coffee</h4>
-          <span>Social Media Design</span>
-        </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.07 (1).jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.07 (1).jpeg" alt="Daryeel Hospital" /></div>
+        <div class="portfolio-info"><h4>Daryeel Hospital</h4><span>Logo Design</span></div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb" style="background:#1a1000;">
-          <i class="ti ti-armchair" style="font-size:40px;color:#ef9f27;"></i>
-        </div>
-        <div class="portfolio-info">
-          <h4>Qurxoon Furniture</h4>
-          <span>Social Media Design</span>
-        </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.07 (2).jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.07 (2).jpeg" alt="Coffee Time" /></div>
+        <div class="portfolio-info"><h4>Taleex Coffee</h4><span>Social Media Design</span></div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb" style="background:#0a1a0a;">
-          <i class="ti ti-tooth" style="font-size:40px;color:#5dcaa5;"></i>
-        </div>
-        <div class="portfolio-info">
-          <h4>Dental Center</h4>
-          <span>Flyer Design</span>
-        </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.07 (3).jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.07 (3).jpeg" alt="Dental Center" /></div>
+        <div class="portfolio-info"><h4>Dental Center</h4><span>Flyer Design</span></div>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-thumb" style="background:#1a0a1a;">
-          <i class="ti ti-sparkles" style="font-size:40px;color:#a78bfa;"></i>
-        </div>
-        <div class="portfolio-info">
-          <h4>Motion Reel</h4>
-          <span>Motion Graphics</span>
-        </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.07.jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.07.jpeg" alt="Ramadan Post" /></div>
+        <div class="portfolio-info"><h4>Ramadan Series</h4><span>Social Media Design</span></div>
       </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.56.08.jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.56.08.jpeg" alt="Hala Beauty Salon" /></div>
+        <div class="portfolio-info"><h4>Hala Beauty Salon</h4><span>Banner Design</span></div>
+      </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.58.55.jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.58.55.jpeg" alt="University" /></div>
+        <div class="portfolio-info"><h4>Jamhuriya University</h4><span>Infographic Design</span></div>
+      </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.58.56.jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.58.56.jpeg" alt="Nada Boutique" /></div>
+        <div class="portfolio-info"><h4>Nada Boutique</h4><span>Logo Design</span></div>
+      </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.58.57 (2).jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.58.57 (2).jpeg" alt="Qurxoon Furniture" /></div>
+        <div class="portfolio-info"><h4>Qurxoon Furniture</h4><span>Social Media Design</span></div>
+      </div>
+
+      <div class="portfolio-card" onclick="openLightbox('WhatsApp Image 2026-05-07 at 11.58.57.jpeg')">
+        <div class="portfolio-thumb"><img src="WhatsApp Image 2026-05-07 at 11.58.57.jpeg" alt="Trivision Media" /></div>
+        <div class="portfolio-info"><h4>Trivision Media</h4><span>Social Media Design</span></div>
+      </div>
+
     </div>
   </div>
 
@@ -497,39 +236,38 @@
     <div class="contact-grid">
       <div class="contact-card">
         <i class="ti ti-brand-whatsapp"></i>
-        <div>
-          <div class="label">WhatsApp</div>
-          <div class="value">+252618147661</div>
-        </div>
+        <div><div class="label">WhatsApp</div><div class="value">+252618147661</div></div>
       </div>
       <div class="contact-card">
         <i class="ti ti-brand-instagram"></i>
-        <div>
-          <div class="label">Instagram</div>
-          <div class="value">@Ahmed shire</div>
-        </div>
+        <div><div class="label">Instagram</div><div class="value">@Ahmed shire</div></div>
       </div>
       <div class="contact-card">
         <i class="ti ti-brand-tiktok"></i>
-        <div>
-          <div class="label">TikTok</div>
-          <div class="value">@Ahmed shire</div>
-        </div>
+        <div><div class="label">TikTok</div><div class="value">@Ahmed shire</div></div>
       </div>
       <div class="contact-card">
         <i class="ti ti-map-pin"></i>
-        <div>
-          <div class="label">Location</div>
-          <div class="value">Mogadishu, Somalia</div>
-        </div>
+        <div><div class="label">Location</div><div class="value">Mogadishu, Somalia</div></div>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Ahmed Designer · Mogadishu, Somalia · All rights reserved
-  </footer>
+  <footer>© 2026 Ahmed Designer · Mogadishu, Somalia · All rights reserved</footer>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('lightbox-img').src = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
